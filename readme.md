@@ -1,4 +1,4 @@
-# WhatsLit (Working)
+# WhatsLit (dev)
 WhatsLit tonight?
 
 ### Git Branching Model
@@ -9,3 +9,8 @@ We're using Git to manage all of our source code and production. [Please learn g
 
 ### Backend-Frontend Protocol
 Here will be some documentation for the protocol.
+
+### Setup
+Want to set up the repo? Fuck off.
+ * [Windows](windows.md)
+ * [Mac](mac.md)
