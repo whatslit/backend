@@ -16,3 +16,7 @@ Want to set up the repo? Fuck off.
  * [Mac](mac.md)
 ### Notes for Setup
  * Check out this [readme](https://github.com/etianen/django-herokuapp) to setup waitress-serve (and heroku in general)
+### Django Notes
+ * RECOMMENDED: [Writing your first Django app] (https://docs.djangoproject.com/en/1.8/intro/tutorial01/); extremely helpful in understanding directory structures, common methods, postgres integration etc.
+ * [Excellent Django REST framework intro](https://github.com/rancavil/django-py3-openshift-quickstart/wiki/Creating-a-REST-service-API-with-Django-and-Django-Rest-Framework)
+ * [Django REST framework website](http://www.django-rest-framework.org/#quickstart)
