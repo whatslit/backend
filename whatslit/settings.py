@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'herokuapp',
     'rest_framework',
+    'backend',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -79,11 +80,13 @@ WSGI_APPLICATION = 'whatslit.wsgi.application'
 #
 import dj_database_url
 DATABASES = {
-    "default": dj_database_url.config(default='postgres://localhost'),
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    # "default": dj_database_url.config(default='postgres://localhost'),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'whatslitdb',
+        'USER': '',
+        # 'PASSWORD': 'admin',
+    },
 }
 
 # DATABASES['default'] =dj_database_url.config()
