@@ -1,1 +1,1 @@
-web: waitress-serve whatslit.wsgi:application 
+web: waitress-serve  --port=$PORT whatslit.wsgi:application 

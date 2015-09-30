@@ -14,3 +14,5 @@ Here will be some documentation for the protocol.
 Want to set up the repo? Fuck off.
  * [Windows](windows.md)
  * [Mac](mac.md)
+### Notes for Setup
+ * Check out this [readme](https://github.com/etianen/django-herokuapp) to setup waitress-serve (and heroku in general)
