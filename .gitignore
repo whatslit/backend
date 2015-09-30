@@ -1,3 +1,7 @@
 readme.html
 windows.html
 __pycache__
+debug_notes.txt
+*.pyc
+static
+venv
