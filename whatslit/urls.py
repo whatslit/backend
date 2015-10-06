@@ -20,7 +20,7 @@ from backend import views
 from rest_framework import routers
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'message', views.MessageViewSet)
+router.register(r'events', views.EventViewSet)
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
