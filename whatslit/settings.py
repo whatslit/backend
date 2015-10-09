@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'whatslitdb',
-        'USER': '',
-        # 'PASSWORD': 'admin',
+        'USER': 'litadmin',
+        'PASSWORD': 'lit',
     },
 }
 
