@@ -1,0 +1,7 @@
+from backend.models import Event
+from backend.serializer import EventBrowserSerializer
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+from datetime import datetime
+import pytz
+event = Event(name='lol', creator_id=1, time_posted=datetime.now(pytz.utc),description='this is an event',latitude=1, longitude=1, score=1)
