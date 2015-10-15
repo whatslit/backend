@@ -86,9 +86,9 @@ DATABASES = {
     # "default": dj_database_url.config(default='postgres://localhost'),
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'whatslitdb',
-        'USER': 'litadmin',
-        'PASSWORD': 'lit',
+        'NAME': 'd5uo0e1jgaklfi',
+        'USER': 'nbaqsxegnntmsf',
+        'PASSWORD': 'INsVPUp8a2SKyyWFDHI5QoaDLF',
     },
 }
 
