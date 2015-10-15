@@ -6,3 +6,4 @@ debug_notes.txt
 static
 venv
 rest_framework_notes.txt
+.env
