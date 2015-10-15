@@ -5,4 +5,5 @@ debug_notes.txt
 *.pyc
 static
 venv
-rest_framework_notes.txt.env
+rest_framework_notes.txt
+.env
