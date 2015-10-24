@@ -82,8 +82,9 @@ WSGI_APPLICATION = 'whatslit.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 #
 import dj_database_url
+
 DATABASES = {
-    # "default": dj_database_url.config(default='postgres://localhost'),
+    # "default": dj_database_url.config(default=os.environ[POSTGRES_URL]),
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd5uo0e1jgaklfi',
@@ -91,8 +92,12 @@ DATABASES = {
         'PASSWORD': 'INsVPUp8a2SKyyWFDHI5QoaDLF',
     },
 }
+DATABASES['default'] =  dj_database_url.config()
+#
+# # Enable Persistent Connections
+DATABASES['default']['ENGINE'] =  'django.db.backends.postgresql_psycopg2'
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
-# DATABASES['default'] =dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
