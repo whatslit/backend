@@ -13,4 +13,4 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventBrowserSerializer
 def index(request):
-	return HttpResponse("Test")
+	return HttpResponse("Make an api browser")
