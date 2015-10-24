@@ -38,8 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'herokuapp',
     'rest_framework',
+    'rest_framework.authtoken',
     'backend',
 )
 # REST_FRAMEWORK = {
@@ -81,21 +81,20 @@ WSGI_APPLICATION = 'whatslit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 #
+# DATABASE_URL
 import dj_database_url
-
 DATABASES = {
-    # "default": dj_database_url.config(default=os.environ[POSTGRES_URL]),
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd5uo0e1jgaklfi',
-        'USER': 'nbaqsxegnntmsf',
-        'PASSWORD': 'INsVPUp8a2SKyyWFDHI5QoaDLF',
+        'NAME': 'whatslitdb',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
     },
 }
-DATABASES['default'] =  dj_database_url.config()
-#
-# # Enable Persistent Connections
-DATABASES['default']['ENGINE'] =  'django.db.backends.postgresql_psycopg2'
+db = dj_database_url.config()
+if db:
+    DATABASES['default'] =  db
+    DATABASES['default']['ENGINE'] =  'django.db.backends.postgresql_psycopg2'
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
