@@ -15,16 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from backend import views
-
-from rest_framework import routers
-
-router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'events', views.EventViewSet)
+import backend
 
 urlpatterns = [
-    # url(r'^$', views.index, name='index'),
+    url(r'^$', include(backend.urls)),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', include(router.urls)),
 ]
