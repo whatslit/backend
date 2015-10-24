@@ -7,14 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backend', '0002_snippet'),
     ]
 
     operations = [
         migrations.CreateModel(
             name='Comment',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
                 ('creator_id', models.IntegerField()),
                 ('time_posted', models.DateTimeField()),
                 ('was_removed', models.BooleanField(default=False)),
@@ -24,23 +23,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Event',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
                 ('creator_id', models.IntegerField()),
                 ('name', models.CharField(max_length=100)),
-                ('event_type', models.CharField(default=b'PA', max_length=2, choices=[(b'PA', b'Party'), (b'CO', b'Concert')])),
+                ('event_type', models.CharField(choices=[('PA', 'Party'), ('CO', 'Concert')], default='PA', max_length=2)),
                 ('was_removed', models.BooleanField(default=False)),
                 ('time_posted', models.DateTimeField()),
                 ('description', models.CharField(max_length=1000)),
                 ('latitude', models.DecimalField(max_digits=13, decimal_places=10)),
                 ('longitude', models.DecimalField(max_digits=13, decimal_places=10)),
                 ('score', models.DecimalField(max_digits=8, decimal_places=3)),
-                ('comments', models.ForeignKey(to='backend.Comment')),
+                ('comments', models.ForeignKey(to='backend.Comment', null=True)),
             ],
-        ),
-        migrations.DeleteModel(
-            name='Message',
-        ),
-        migrations.DeleteModel(
-            name='Snippet',
         ),
     ]

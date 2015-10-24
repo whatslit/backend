@@ -5,5 +5,5 @@ debug_notes.txt
 *.pyc
 static
 venv
-backend/migrations/0001_initial.py
 rest_framework_notes.txt
+.env

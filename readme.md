@@ -1,4 +1,4 @@
-# WhatsLit (dev)
+# WhatsLit
 WhatsLit tonight?
 
 ### Git Branching Model
