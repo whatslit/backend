@@ -15,9 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-import backend
+from backend import urls
+from . import settings
+from rest_framework.authtoken import views
 
 urlpatterns = [
-    url(r'^$', include(backend.urls)),
+    url(r'^', include(urls)),
+    url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^admin/', include(admin.site.urls)),
 ]
+urlpatterns += patterns('',
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.STATIC_ROOT,
+    }),
+ )
