@@ -21,3 +21,4 @@ Want to set up the repo?
  * RECOMMENDED: [Writing your first Django app] (https://docs.djangoproject.com/en/1.8/intro/tutorial01/); extremely helpful in understanding directory structures, common methods, postgres integration etc.
  * [Excellent Django REST framework intro](https://github.com/rancavil/django-py3-openshift-quickstart/wiki/Creating-a-REST-service-API-with-Django-and-Django-Rest-Framework)
  * [Django REST framework website](http://www.django-rest-framework.org/#quickstart)
+ * If you don't have a local superuser setup for the api-auth, you have to django-ify your superuser. [This section](https://docs.djangoproject.com/en/1.8/intro/tutorial02/) of the tutorial goes over how to do this.

@@ -15,16 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from backend import views
-
-from rest_framework import routers
-
-router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'events', views.EventViewSet)
+from backend import urls
+from . import settings
+from rest_framework.authtoken import views
 
 urlpatterns = [
-    # url(r'^$', views.index, name='index'),
+    url(r'^', include(urls)),
+    url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', include(router.urls)),
 ]
+urlpatterns += patterns('',
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.STATIC_ROOT,
+    }),
+ )
