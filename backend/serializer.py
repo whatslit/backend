@@ -12,4 +12,4 @@ class UserSerializer(serializers.ModelSerializer):
 class EventBrowserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
-        fields = ('name', 'event_type', 'time_posted', 'latitude', 'longitude', 'score')
+        fields = ('id','name', 'event_type', 'time_posted', 'latitude', 'longitude', 'score')

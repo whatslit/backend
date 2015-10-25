@@ -40,14 +40,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'backend',
 )
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-#     'PAGE_SIZE': 10
-# }
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -78,6 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'whatslit.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 #
@@ -91,12 +91,21 @@ DATABASES = {
         'PASSWORD': 'admin',
     },
 }
+CORS_ORIGIN_WHITELIST = (
+        'localhost:4200',
+        'whatslit.io',
+)
 db = dj_database_url.config()
 if db:
     DATABASES['default'] =  db
     DATABASES['default']['ENGINE'] =  'django.db.backends.postgresql_psycopg2'
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

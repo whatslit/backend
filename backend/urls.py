@@ -7,6 +7,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.test),
+    url(r'^logout/', views.logout_user),
     url(r'^events/', views.EventList.as_view()),
     url(r'^events/(?P<pk>[0-9]+)/$', views.EventDetail.as_view()),
     url(r'^users/$', views.UserList.as_view()),

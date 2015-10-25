@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 PARTY = 'PA'
 CONCERT = 'CO'
 EVENT_TYPES = (
@@ -31,6 +33,11 @@ class Event(models.Model):
     latitude = models.DecimalField(decimal_places=10, max_digits=13)
     longitude = models.DecimalField(decimal_places=10, max_digits=13)
     score = models.DecimalField(decimal_places=3, max_digits=8)
+class Partier(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_image = models.FileField()
+    events_invited = models.ManyToManyField(Event, related_name='events')
+    litness = models.DecimalField(decimal_places=5, max_digits=13, null=True)
 
 
 from django.conf import settings
