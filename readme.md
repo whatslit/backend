@@ -1,5 +1,5 @@
 # WhatsLit
-WhatsLit tonight?
+WhatsLit tonight? --
 
 ### Git Branching Model
 We're using Git to manage all of our source code and production. [Please learn git.](https://www.atlassian.com/git/tutorials/) We have a production branch (master) and a development branch (dev). There are a few things you need to know
