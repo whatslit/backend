@@ -94,6 +94,7 @@ DATABASES = {
 CORS_ORIGIN_WHITELIST = (
         'localhost:4200',
         'whatslit.io',
+        'www.whatslit.io',
 )
 db = dj_database_url.config()
 if db:

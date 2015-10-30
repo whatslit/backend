@@ -16,10 +16,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Partier',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+
+                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
                 ('profile_image', models.FileField(upload_to='')),
-                ('latitude', models.DecimalField(decimal_places=10, max_digits=13)),
-                ('longitude', models.DecimalField(decimal_places=10, max_digits=13)),
+                ('litness', models.DecimalField(decimal_places=5, max_digits=13, null=True)),
+                ('events_invited', models.ManyToManyField(to='backend.Event', related_name='events')),
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
         ),
