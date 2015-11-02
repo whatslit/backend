@@ -7,14 +7,7 @@ EVENT_TYPES = (
     (PARTY, 'Party'),
     (CONCERT, 'Concert'),
 )
-# Create your models here.
-# class Message(models.Model):
-#     author = models.CharField(max_length=20)
-#     text = models.CharField(max_length=140)
-#     timestamp = models.DateTimeField(auto_now_add=True)
-#
-#     def __unicode__(self):
-#         return self.author
+
 
 class Comment(models.Model):
     creator_id = models.IntegerField()

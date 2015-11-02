@@ -8,6 +8,8 @@ from backend.models import Event
 from backend.serializer import EventBrowserSerializer
 from backend.permissions import IsOwnerOrReadOnly
 
+
+'''LISTS ALL EVENTS'''
 class List(generics.ListCreateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventBrowserSerializer
@@ -15,6 +17,8 @@ class List(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
+'''GIVES DETAILS OF AN EVENT'''
 class Detail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Event.objects.all()
     serializer_class = EventBrowserSerializer
