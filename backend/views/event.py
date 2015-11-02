@@ -13,9 +13,9 @@ from backend.permissions import IsOwnerOrReadOnly
 class List(generics.ListCreateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventBrowserSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    #permission_classes = (permissions.IsAuthenticated,)
+    #def perform_create(self, serializer):
+        #serializer.save(owner=self.request.user)
 
 
 '''GIVES DETAILS OF AN EVENT'''

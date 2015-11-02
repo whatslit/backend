@@ -16,7 +16,7 @@ class Comment(models.Model):
     content = models.CharField(max_length=1000)
     
 class Event(models.Model):
-    owner = models.ForeignKey('auth.User', related_name='events', null=True)
+    owner = models.ForeignKey(User, related_name='events', null=True)
     name = models.CharField(max_length=100)
     event_type = models.CharField(max_length=2, choices=EVENT_TYPES, default=PARTY)
     was_removed = models.BooleanField(default=False)
@@ -33,9 +33,3 @@ class Partier(models.Model):
     profile_image = models.FileField()
     events_invited = models.ManyToManyField(Event, related_name='events')
     litness = models.DecimalField(decimal_places=5, max_digits=13, null=True)
-
-
-from django.conf import settings
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from rest_framework.authtoken.models import Token
