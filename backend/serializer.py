@@ -22,8 +22,8 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
-
-class EventBrowserSerializer(serializers.HyperlinkedModelSerializer):
+class EventBrowserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('id','name', 'event_type', 'time_posted', 'latitude', 'longitude', 'score')
+        fields = ('id', 'owner', 'name', 'event_type', 'time_posted', 'latitude', 'longitude', 'score')
+        #extra_kwargs = {'owner': {'read_only': True}}
