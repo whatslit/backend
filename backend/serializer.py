@@ -27,3 +27,7 @@ class EventBrowserSerializer(serializers.ModelSerializer):
         model = Event
         fields = ('id', 'owner', 'name', 'event_type', 'time_posted', 'latitude', 'longitude', 'score')
         #extra_kwargs = {'owner': {'read_only': True}}
+class EventBrowserDeepSerializer(seralizers.ModelSerializer):
+    class Meta:
+        model = Event
+        fields = ('id', 'owner','name', 'event_type', 'time_posted')

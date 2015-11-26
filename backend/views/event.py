@@ -13,8 +13,8 @@ from backend.permissions import IsOwnerOrReadOnly
 class List(generics.ListCreateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventBrowserSerializer
-    #permission_classes = (permissions.IsAuthenticated,)
-    #def perform_create(self, serializer):
+    # permission_classes = (permissions.IsAuthenticated,)
+    def perform_create(self, serializer):
         #serializer.save(owner=self.request.user)
 
 
@@ -25,4 +25,3 @@ class Detail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAdminUser,)
     def get(self, request, *args, **kwargs):
         event = snippet.get_object();
-
